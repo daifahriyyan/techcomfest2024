@@ -1,0 +1,89 @@
+[24-Oct-2022 01:47:59 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 01:49:35 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 01:58:28 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 01:59:57 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 02:00:23 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 02:00:29 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 02:03:01 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 02:10:43 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 02:17:42 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:335
+Stack trace:
+#0 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(631): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(612): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(543): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(449): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(366): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(493): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(138): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/ukmpccor/techcomfest.ukmpcc.org/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 335
+[24-Oct-2022 02:17:53 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:335
+Stack trace:
+#0 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(631): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(612): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(543): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(449): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(366): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(493): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(138): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/ukmpccor/techcomfest.ukmpcc.org/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 335
+[24-Oct-2022 02:18:21 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:335
+Stack trace:
+#0 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(631): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(612): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(543): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(449): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(366): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(493): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(138): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/ukmpccor/techcomfest.ukmpcc.org/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 335
+[24-Oct-2022 02:18:40 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:335
+Stack trace:
+#0 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(631): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(612): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(543): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(449): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(366): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(493): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(138): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/ukmpccor/techcomfest.ukmpcc.org/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 335
+[24-Oct-2022 02:18:42 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:335
+Stack trace:
+#0 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(631): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(612): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(543): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(449): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(366): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(493): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(138): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/ukmpccor/techcomfest.ukmpcc.org/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 335
+[24-Oct-2022 02:18:42 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:335
+Stack trace:
+#0 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php(18): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(631): Illuminate\Foundation\Exceptions\RegisterErrorViewPaths->__invoke()
+#2 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(612): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#3 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(543): Illuminate\Foundation\Exceptions\Handler->renderHttpException()
+#4 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(449): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#5 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(366): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#6 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(493): Illuminate\Foundation\Exceptions\Handler->render()
+#7 /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(138): Illuminate\Foundation\Http\Kernel->renderException()
+#8 /home/ukmpccor/techcomfest.ukmpcc.org/public/index.php(52): Illuminate\Foundation\Http\Kernel->handle()
+#9 {main}
+  thrown in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 335
+[24-Oct-2022 02:20:18 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[24-Oct-2022 02:21:22 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.24. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
+[19-Jan-2023 06:30:22 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.4.33. in /home/ukmpccor/techcomfest.ukmpcc.org/vendor/composer/platform_check.php on line 24
