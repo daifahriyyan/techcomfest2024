@@ -21,7 +21,7 @@
                                  <div class="form-group">
                                     <label>Kategori</label>
                                     <select class="form-control" name="kategori">
-                                        <option value="multimedia">Infografis</option>
+                                        <option value="multimedia">UI / UX</option>
                                         <option value="network">Capture The Flag</option>
                                         <option value="software">Web Desain</option>
                                     </select>
@@ -52,38 +52,38 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Peserta 2</label>
-                                    <input type="text" name="peserta2" class="form-control" required>
+                                    <input type="text" name="peserta2" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>NIK Peserta 2</label>
-                                    <input type="text" name="nikpeserta2" class="form-control" required>
+                                    <input type="text" name="nikpeserta2" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Peserta 2</label>
-                                    <input type="email" name="email2" class="form-control" required>
+                                    <input type="email" name="email2" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Lahir Peserta 2</label>
-                                    <input type="date" name="tgllahir2" class="form-control" required>
+                                    <input type="date" name="tgllahir2" class="form-control">
                                 </div>
                                  <div class="form-group">
                                     <label>Bagi pendaftar lomba desain web silakan isikan (-) pada peserta ke-3</label>
                                 </div>
                                 <div class="form-group">
                                     <label>Peserta 3</label>
-                                    <input type="text" name="peserta3" class="form-control" required>
+                                    <input type="text" name="peserta3" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>NIK Peserta 3</label>
-                                    <input type="text" name="nikpeserta3" class="form-control" required>
+                                    <input type="text" name="nikpeserta3" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Peserta 3</label>
-                                    <input type="text" name="email3" class="form-control" required>
+                                    <input type="text" name="email3" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Lahir Peserta 3</label>
-                                    <input type="date" name="tgllahir3" class="form-control" required>
+                                    <input type="date" name="tgllahir3" class="form-control">
                                 </div>
                                 <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Simpan">
                             </div>

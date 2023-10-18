@@ -35,7 +35,7 @@
                                 @elseif( Auth::user()->kategori == "Software")
                                     Desain Web
                                     @elseif( Auth::user()->kategori == "Multimedia")
-                                    Infografis
+                                    UI / UX Mobile Design
                                 @endif
                             </td>
                             <td>

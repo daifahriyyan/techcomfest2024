@@ -43,9 +43,10 @@ class DataDiriController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-		// 	'file' => 'required|file',
-		// ]);
+        // validasi format .zip
+        $this->validate($request, [
+			'file' => 'mimes:zip',
+		]);
 
         $file = $request->file;
 

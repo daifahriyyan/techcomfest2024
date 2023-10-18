@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Techcomfest 2023</title>
+    <title>Techcomfest 2024</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
@@ -47,7 +47,7 @@
         </div>
         <footer class="main-footer">
             <div class="footer-right">
-                UKM PCC &copy; 2022
+                UKM PCC &copy; 2023
             </div>
         </footer>
     </div>

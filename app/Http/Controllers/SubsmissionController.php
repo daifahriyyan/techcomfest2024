@@ -7,7 +7,6 @@ use App\Models\snetwork;
 use App\Models\ssoftware;
 use App\Models\Teams;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 
 class SubsmissionController extends Controller
@@ -57,6 +56,12 @@ class SubsmissionController extends Controller
      */
     public function storemulmed(Request $request)
     {
+        // validasi format .pdf
+        $this->validate($request, [
+            'lorisinil'         => 'mimes:pdf',
+            'hasilkaryalomba'   => 'mimes:pdf'
+        ]);
+
         // dd($request);
         $tujuan_upload = 'SubsmissionMultiMedia';
         
@@ -64,24 +69,14 @@ class SubsmissionController extends Controller
         $lokasi_lorisinil = time()."-".$lorisinil->getClientOriginalName();
 		$lorisinil->move($tujuan_upload,$lokasi_lorisinil);
         
-        $ldeskripsi = $request->ldeskripsi;
-        $lokasi_ldeskripsi = time()."-".$ldeskripsi->getClientOriginalName();
-		$ldeskripsi->move($tujuan_upload,$lokasi_ldeskripsi);
-        
         $hasilkaryalomba = $request->hasilkaryalomba;
         $lokasi_hasilkaryalomba = time()."-".$hasilkaryalomba->getClientOriginalName();
 		$hasilkaryalomba->move($tujuan_upload,$lokasi_hasilkaryalomba);
 
-        $presentasi = $request->presentasi;
-        $lokasi_presentasi = time()."-".$presentasi->getClientOriginalName();
-		$presentasi->move($tujuan_upload,$lokasi_presentasi);
-
         $mulmed = new smulmed();
         $mulmed->idteam = $request->idteam;
         $mulmed->lorisinil = $lokasi_lorisinil;
-        $mulmed->ldeskripsi = $lokasi_ldeskripsi;
         $mulmed->hasilkaryalomba = $lokasi_hasilkaryalomba;
-        $mulmed->presentasi = $lokasi_presentasi;
         $mulmed->save();
 
         return redirect(Route('dashboard'));
@@ -89,6 +84,12 @@ class SubsmissionController extends Controller
 
     public function storesoftware(Request $request)
     {
+        //validasi URL
+        $this->validate($request, [
+            'linkgd'    => 'url:http,https',
+            'linkhost'  => 'url:http,https'
+        ]);
+
         $software = new ssoftware();
         $software->idteam = $request->idteam;
         $software->linkgd = $request->linkdrive;
@@ -100,14 +101,23 @@ class SubsmissionController extends Controller
 
     public function storenetwork(Request $request)
     {
-        $network = $request->validate([
-            'idteam' => 'required',
-            'filerar'=> 'mimes:png'
+        // validasi format .zip
+        $this->validate($request, [
+            'filerar' => 'mimes:zip'
         ]);
 
-        snetwork::create($network);
-        return redirect(Route('dashboard'))->with('success', 'Upload File Capture The Flag Berhasil!!!');
+        $lokasi_Upload = 'SubsmissionNetwork';
 
+        $filerar = $request->filerar;
+        $nama_filerar = time().'-'.$filerar->getClientOriginalName();
+		$filerar->move($lokasi_Upload,$nama_filerar);
+
+        $network = new snetwork();
+        $network->idteam = $request->idteam;
+        $network->filerar = $nama_filerar;
+        $network->save();
+
+        return redirect(Route('dashboard'));
     }
 
     /**

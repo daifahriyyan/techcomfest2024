@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('idteam');
             $table->string('lorisinil');
-            $table->string('ldeskripsi');
             $table->string('hasilkaryalomba');
-            $table->string('presentasi');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -78,6 +78,88 @@
       </div>
     </div>
   </div>
+  <div class="section-body">
+    <h2 class="section-title">Hasil Karya</h2>
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              @php
+                  $role = Auth::user()->role;
+              @endphp
+              <th scope="col">No</th>
+              <th scope="col">Nama Tim</th>
+              <th scope="col"><?php if($role == 'IndependenM'){echo 'Lembar Orisinil';}elseif($role == 'IndependenS'){echo 'Link Host';}elseif($role == 'IndependenN'){echo 'Hasil Karya';} ?></th>
+              <th scope="col"><?php if($role == 'IndependenM'){echo 'Berkas Kerya';}elseif($role == 'IndependenS'){echo 'Link Gdrive';}elseif($role == 'IndependenN'){echo '';} ?></th>
+            </tr>
+          </thead>
+            @foreach($datadiriadmin as $x)
+            @php 
+
+              if ($role == 'IndependenM') {
+              $datadiri = App\Models\smulmed::where('idteam' , $x['id'])->latest()->first();
+              }elseif ($role == 'IndependenS'){
+              $datadiri = App\Models\ssoftware::where('idteam' , $x['id'])->latest()->first();
+              }elseif ($role == 'IndependenN'){
+              $datadiri = App\Models\snetwork::where('idteam' , $x['id'])->latest()->first();
+              }
+
+            @endphp
+            @if (is_null($datadiri))
+                
+            @else
+            <tr>
+              <td align="left">{{ $loop->iteration }}</td>
+              <td>
+                @php 
+                  $namateam = App\Models\Teams::where('userid' , $x['id'])->first('namateam'); 
+                @endphp
+                @if(is_null($namateam))
+                    Kosong
+                @else
+                {{ $namateam['namateam']; }}
+                    
+                @endif
+              </td>
+              <td>
+                <?php
+                if(is_null($datadiri)){
+                  echo 'kosong';
+                }else if($role == 'IndependenM'){
+                  echo $datadiri->lorisinil;
+                }else if($role == 'IndependenS'){
+                  echo $datadiri->linkhost;
+                }else if($role == 'IndependenN'){
+                  echo $datadiri->filerar;
+                }
+                ?>
+              </td>
+              <td>
+                <?php
+
+                    if(is_null($datadiri)){
+                      echo 'kosong';
+                    }else if($role == 'IndependenM'){
+                      echo $datadiri->hasilkaryalomba;
+                    }else if($role == 'IndependenS'){
+                      echo $datadiri->linkgd;
+                    }else if($role == 'IndependenN'){
+                      echo '';
+                    }
+                    
+                ?>
+              </td>
+            </tr>
+            @endif
+            
+            @endforeach
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 @foreach($datadiriadmin as $x)
 @php 
@@ -188,7 +270,7 @@ $datadiri = App\Models\DataDiri::where('userid' , $x['id'])->first();
                     <td>Input Data Team</td>
                     <td>
                       @if(empty($teams))
-                      <div class="badge badge-info">Todo</div>
+                      <div class="badge badge-info">To Do</div>
                       @else
                       <div class="badge badge-success">Completed</div>
                       @endif
@@ -215,7 +297,7 @@ $datadiri = App\Models\DataDiri::where('userid' , $x['id'])->first();
                       @endif
                       @endforeach
                       @else
-                      <div class="badge badge-info">Todo</div>
+                      <div class="badge badge-info">To Do</div>
                       @endif
                     </td>
                   </tr>
@@ -229,7 +311,7 @@ $datadiri = App\Models\DataDiri::where('userid' , $x['id'])->first();
                     <td>Submission Lomba</td>
                     <td>
                       @if($subsmission == 'tdkada' || $subsmission->isEmpty())
-                      <div class="badge badge-info">Todo</div>
+                      <div class="badge badge-info">To Do</div>
                       @else
                       <div class="badge badge-success">Completed</div>
                       @endif                      

@@ -52,17 +52,17 @@
                 <ul class="dropdown-menu">
                     @if(Auth::user()->kategori == 'Software')
                     <li class="dropdown {{ Request::segment(1) === 'SSoftware' ? 'active' : "" }}">
-                        <a class="nav-link" href="{{ Route('SSoftware')}}">Software</a>
+                        <a class="nav-link" href="{{ Route('SSoftware')}}">Web Design</a>
                     </li>
 
                     @elseif(Auth::user()->kategori == 'Multimedia')
                     <li class="dropdown {{ Request::segment(1) === 'SMulmed' ? 'active' : "" }}">
-                        <a class="nav-link" href="{{ Route('SMulmed')}}">Multimedia</a>
+                        <a class="nav-link" href="{{ Route('SMulmed')}}">UI / UX Mobile Design</a>
                     </li>
 
                     @elseif(Auth::user()->kategori == 'Network')
                     <li class="dropdown {{ Request::segment(1) === 'network' ? 'active' : "" }}">
-                        <a class="nav-link" href="{{ route('SNetwork') }}">Network</a>
+                        <a class="nav-link" href="{{ route('SNetwork') }}">Capture The Flag</a>
                     </li>
 
                     @else
@@ -75,7 +75,7 @@
         </ul>
 
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="/assets/file/GENERAL_RULEBOOK_TECHCOMFEST_2023.pdf" class="btn btn-primary btn-lg btn-block btn-icon-split" download>
+            <a href="/assets/file/2024 GENERAL RULEBOOK TECHCOMFEST.pdf" class="btn btn-primary btn-lg btn-block btn-icon-split" download>
                 <i class="fas fa-rocket"></i>Panduan Umum
             </a>
         </div>

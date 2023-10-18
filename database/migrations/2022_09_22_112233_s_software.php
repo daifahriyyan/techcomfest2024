@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('ssoftware', function (Blueprint $table) {
             $table->id();
             $table->string('idteam');
+            $table->string('linkhost');
             $table->string('linkgd');
             $table->rememberToken();
             $table->timestamps();

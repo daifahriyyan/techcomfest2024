@@ -78,25 +78,29 @@ class TeamsController extends Controller
         $peserta1->idteam = $teamid;
         $peserta1->save();
 
-        $peserta2 = new Peserta;
-        $peserta2->namapeserta = $request->peserta2;
-        $peserta2->namapembina = $request->dosen;
-        $peserta2->asalsekolah = $request->sekolah;
-        $peserta2->nik = $request->nikpeserta2;
-        $peserta2->email = $request->email2;
-        $peserta2->tanggallahir = $request->tgllahir2;
-        $peserta2->idteam = $teamid;
-        $peserta2->save();
+        if(isset($peserta2)){
+            $peserta2 = new Peserta;
+            $peserta2->namapeserta = $request->peserta2;
+            $peserta2->namapembina = $request->dosen;
+            $peserta2->asalsekolah = $request->sekolah;
+            $peserta2->nik = $request->nikpeserta2;
+            $peserta2->email = $request->email2;
+            $peserta2->tanggallahir = $request->tgllahir2;
+            $peserta2->idteam = $teamid;
+            $peserta2->save();
+        }
 
-        $peserta3 = new Peserta;
-        $peserta3->namapeserta = $request->peserta3;
-        $peserta3->namapembina = $request->dosen;
-        $peserta3->asalsekolah = $request->sekolah;
-        $peserta3->nik = $request->nikpeserta3;
-        $peserta3->email = $request->email3;
-        $peserta3->tanggallahir = $request->tgllahir3;
-        $peserta3->idteam = $teamid;
-        $peserta3->save();
+        if(isset($peserta3)){
+            $peserta3 = new Peserta;
+            $peserta3->namapeserta = $request->peserta3;
+            $peserta3->namapembina = $request->dosen;
+            $peserta3->asalsekolah = $request->sekolah;
+            $peserta3->nik = $request->nikpeserta3;
+            $peserta3->email = $request->email3;
+            $peserta3->tanggallahir = $request->tgllahir3;
+            $peserta3->idteam = $teamid;
+            $peserta3->save();
+        }
 
         DB::table('users')
             ->where('id', Auth::user()->id)
