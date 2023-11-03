@@ -27,6 +27,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/Teams' , [TeamsController::class , 'index'])->name('TeamsIndex');
 Route::get('/TeamsTambah' , [TeamsController::class , 'tambah'])->name('TeamsTambah');
+Route::get('/TeamsAdd/{id}' , [TeamsController::class , 'add'])->name('TeamsAdd');
 Route::get('/CreateTeams' , [TeamsController::class , 'create'])->name('TeamsCreate');
 Route::post('/StoreTeams' , [TeamsController::class , 'store'])->name('TeamsStore');
 Route::get('/UpdateTeams/{id}' , [TeamsController::class , 'update'])->name('TeamsUpdate');

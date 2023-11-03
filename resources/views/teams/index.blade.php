@@ -6,8 +6,11 @@
     </div>
     <div class="section-body">
         <h2 class="section-title">Data Tim</h2>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$teams->id}}">Edit</button>
+        @if (isset($teams))
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ $teams->id }}">Edit</button>
         <a href="{{ Route('TeamsTambah') }}"><button class="btn btn-primary">Tambah Team</button></a>
+            
+        @endif
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -58,7 +61,8 @@
     </div>
 </section>
 {{-- Edit Modal --}}
-<div class="modal" tabindex="-1" role="dialog" id="exampleModal{{$teams->id}}">
+@if (isset($teams))
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal{{ $teams->id }}">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
     <div class="modal-header">
@@ -74,12 +78,12 @@
         <br>
         <div class="form-group">
             <label>Nama Pembina</label>
-        <input type="text" name="namapembina" value="{{$peserta[0]->namapembina}}" class="form-control" required>
+        <input type="text" name="namapembina" value="{{(isset($peserta))?$peserta[0]->namapembina : ''}}" class="form-control" required>
         </div>
         <br>
         <div class="form-group">
             <label>Asal Sekolah</label>
-        <input type="text" name="asalsekolah" value="{{$peserta[0]->asalsekolah}}" class="form-control" required>
+        <input type="text" name="asalsekolah" value="{{(isset($peserta))?$peserta[0]->asalsekolah : ''}}" class="form-control" required>
         </div>
 @foreach ($peserta as $x)
             <?php $i++ ?>
@@ -91,7 +95,7 @@
         </div>
         <br>
         <div class="form-group">
-            <label>NIS/NISN</label>
+            <label>NIM/NISN</label>
         <input type="number" name="nik{{$i}}" value="{{$x->nik}}" class="form-control" required>
         </div>
         <br>
@@ -114,4 +118,6 @@
 </div>
 </div>
 </div>
+    
+@endif
 @endsection

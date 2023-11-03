@@ -34,9 +34,13 @@ class TeamsController extends Controller
                     ->pluck('id');
         $array = array("[" , "]");
         $teamid = str_replace($array , "" , $teamsearch);
-        $peserta = Peserta::where('idteam' , $teamid)->get();
+        $peserta = Peserta::where('idteam', 'LIKE', "$teamid")->get();
 
-        return view('teams.index' , compact('teams' , 'peserta'));
+        if(isset($teams)){
+            return view('teams.index' , compact('teams', 'peserta'));       
+        }else{
+            return view('teams.index' , compact('peserta'));
+        }
     }
 
     /**
@@ -58,8 +62,32 @@ class TeamsController extends Controller
                     ->pluck('id');
         $array = array("[" , "]");
         $teamid = str_replace($array , "" , $teamsearch);
-        $peserta = Peserta::where('idteam' , $teamid)->get();
+        $peserta = Peserta::where('idteam', 'LIKE', "$teamid")->get();
         return view('teams.tambah', compact('peserta', 'teams', 'kategori'));
+    }
+
+    public function add(Request $request, $id){
+        $updateTeams = Peserta::where('idteam', 'LIKE', "$id")->get();
+
+        $teamsearch = DB::table('teams')
+                    ->where('userid', '=', Auth::user()->id)
+                    ->pluck('id');
+        $array = array("[" , "]");
+        $teamid = str_replace($array , "" , $teamsearch);
+        
+        if(count($updateTeams) < 3){
+            $peserta1 = new Peserta;
+            $peserta1->namapeserta = $request->namapeserta;
+            $peserta1->namapembina = $request->namapembina;
+            $peserta1->asalsekolah = $request->asalsekolah;
+            $peserta1->nik = $request->nik;
+            $peserta1->email = $request->email;
+            $peserta1->tanggallahir = $request->tanggallahir;
+            $peserta1->idteam = $request->idteams;
+            $peserta1->save();
+        }
+            return redirect(Route('TeamsIndex'));
+
     }
 
     /**
@@ -81,6 +109,7 @@ class TeamsController extends Controller
         $array = array("[" , "]");
         $teamid = str_replace($array , "" , $teamsearch);
 
+        if (isset($request->peserta1)) {
         $peserta1 = new Peserta;
         $peserta1->namapeserta = $request->peserta1;
         $peserta1->namapembina = $request->dosen;
@@ -90,7 +119,8 @@ class TeamsController extends Controller
         $peserta1->tanggallahir = $request->tgllahir1;
         $peserta1->idteam = $teamid;
         $peserta1->save();
-
+        }
+        if (isset($request->peserta2)) {
             $peserta2 = new Peserta;
             $peserta2->namapeserta = $request->peserta2;
             $peserta2->namapembina = $request->dosen;
@@ -100,7 +130,8 @@ class TeamsController extends Controller
             $peserta2->tanggallahir = $request->tgllahir2;
             $peserta2->idteam = $teamid;
             $peserta2->save();
-
+        }
+        if (isset($request->peserta3)) {
             $peserta3 = new Peserta;
             $peserta3->namapeserta = $request->peserta3;
             $peserta3->namapembina = $request->dosen;
@@ -110,7 +141,7 @@ class TeamsController extends Controller
             $peserta3->tanggallahir = $request->tgllahir3;
             $peserta3->idteam = $teamid;
             $peserta3->save();
-
+        }
         DB::table('users')
             ->where('id', Auth::user()->id)
             ->update(['kategori' => $request->kategori]);
@@ -151,7 +182,6 @@ class TeamsController extends Controller
     {
         $updateTeams = Peserta::where('idteam', 'LIKE', "$id")->get();
 $i = 1;
-            
             foreach ($updateTeams as $updateTeam) {
             $namapeserta = "namapeserta$i";
             $nik = "nik$i";

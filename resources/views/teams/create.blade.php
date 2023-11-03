@@ -41,7 +41,7 @@
                                     <input type="text" name="peserta1" class="form-control" value="" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>NIK Peserta 1</label>
+                                    <label>NIM/NISN Peserta 1</label>
                                     <input type="text" name="nikpeserta1" class="form-control" value="" required>
                                 </div>
                                 <div class="form-group">
@@ -57,7 +57,7 @@
                                     <input type="text" name="peserta2" class="form-control" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label>NIK Peserta 2</label>
+                                    <label>NIM/NISN Peserta 2</label>
                                     <input type="text" name="nikpeserta2" class="form-control" value="">
                                 </div>
                                 <div class="form-group">
@@ -76,7 +76,7 @@
                                     <input type="text" name="peserta3" class="form-control" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label>NIK Peserta 3</label>
+                                    <label>NIM/NISN Peserta 3</label>
                                     <input type="text" name="nikpeserta3" class="form-control" value="">
                                 </div>
                                 <div class="form-group">
