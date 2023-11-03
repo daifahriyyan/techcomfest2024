@@ -45,7 +45,7 @@ class DataDiriController extends Controller
     {
         // validasi format .zip
         $this->validate($request, [
-			'file' => 'mimes:zip',
+			'file' => 'mimes:zip'
 		]);
 
         $file = $request->file;

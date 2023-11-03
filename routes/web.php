@@ -26,8 +26,10 @@ Route::get('/dashboard', [HomeController::class , 'index'])->middleware(['auth']
 require __DIR__.'/auth.php';
 
 Route::get('/Teams' , [TeamsController::class , 'index'])->name('TeamsIndex');
+Route::get('/TeamsTambah' , [TeamsController::class , 'tambah'])->name('TeamsTambah');
 Route::get('/CreateTeams' , [TeamsController::class , 'create'])->name('TeamsCreate');
 Route::post('/StoreTeams' , [TeamsController::class , 'store'])->name('TeamsStore');
+Route::get('/UpdateTeams/{id}' , [TeamsController::class , 'update'])->name('TeamsUpdate');
 Route::get('/DeleteTeams/{id}' , [TeamsController::class , 'destroy'])->name('TeamsDelete');
 
 Route::get('/DataDiris' , [DataDiriController::class , 'index'])->name('DataDiriIndex');
@@ -38,6 +40,7 @@ Route::get('/DownloadDataDiri/{id}' , [DataDiriController::class , 'download'])-
 
 Route::get('/SMulmed' , [SubsmissionController::class , 'indexmulmed'])->name('SMulmed');
 Route::post('/SSMulmed' , [SubsmissionController::class , 'storemulmed'])->name('SSMulmed');
+Route::get('/berkasMulmed/{id}' , [SubsmissionController::class , 'berkasMulmed'])->name('berkasMulmed');
 
 
 Route::get('/SSoftware' , [SubsmissionController::class , 'indexsoftware'])->name('SSoftware');
@@ -46,5 +49,6 @@ Route::post('/SSSoftware' , [SubsmissionController::class , 'storesoftware'])->n
 
 Route::get('/SNetwork' , [SubsmissionController::class , 'indexnetwork'])->name('SNetwork');
 Route::post('/SSNetwork' , [SubsmissionController::class , 'storenetwork'])->name('SSNetwork');
+Route::get('/berkasNetwork/{id}' , [SubsmissionController::class , 'berkasNetwork'])->name('berkasNetwork');
 
 Route::post('/VerifDataDiri/{id}' , [DataDiriController::class , 'update'])->name('VerifDataDiri');

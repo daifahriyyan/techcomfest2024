@@ -49,6 +49,19 @@ class TeamsController extends Controller
         return view('teams.create');
     }
 
+    public function tambah()
+    {
+        $kategori = Auth::user()->kategori;
+        $teams = Teams::where('userid' , Auth::user()->id)->first();
+        $teamsearch = DB::table('teams')
+                    ->where('userid', '=', Auth::user()->id)
+                    ->pluck('id');
+        $array = array("[" , "]");
+        $teamid = str_replace($array , "" , $teamsearch);
+        $peserta = Peserta::where('idteam' , $teamid)->get();
+        return view('teams.tambah', compact('peserta', 'teams', 'kategori'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -78,7 +91,6 @@ class TeamsController extends Controller
         $peserta1->idteam = $teamid;
         $peserta1->save();
 
-        if(isset($peserta2)){
             $peserta2 = new Peserta;
             $peserta2->namapeserta = $request->peserta2;
             $peserta2->namapembina = $request->dosen;
@@ -88,9 +100,7 @@ class TeamsController extends Controller
             $peserta2->tanggallahir = $request->tgllahir2;
             $peserta2->idteam = $teamid;
             $peserta2->save();
-        }
 
-        if(isset($peserta3)){
             $peserta3 = new Peserta;
             $peserta3->namapeserta = $request->peserta3;
             $peserta3->namapembina = $request->dosen;
@@ -100,7 +110,6 @@ class TeamsController extends Controller
             $peserta3->tanggallahir = $request->tgllahir3;
             $peserta3->idteam = $teamid;
             $peserta3->save();
-        }
 
         DB::table('users')
             ->where('id', Auth::user()->id)
@@ -140,7 +149,41 @@ class TeamsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updateTeams = Peserta::where('idteam', 'LIKE', "$id")->get();
+$i = 1;
+            
+            foreach ($updateTeams as $updateTeam) {
+            $namapeserta = "namapeserta$i";
+            $nik = "nik$i";
+            $email = "email$i";
+            $tanggallahir = "tanggallahir$i";
+
+            $updateTeams[$i-1]->namapeserta    = $request[$namapeserta];
+            $updateTeams[$i-1]->nik            = $request[$nik];
+            $updateTeams[$i-1]->email          = $request[$email];
+            $updateTeams[$i-1]->tanggallahir   = $request[$tanggallahir];
+            $updateTeams[$i-1]->namapembina    = $request['namapembina'];
+            $updateTeams[$i-1]->asalsekolah    = $request['asalsekolah'];
+            $i++;
+            }
+
+            // $updateTeams[1]->namapeserta    = $request->namapeserta2;
+            // $updateTeams[1]->nik            = $request->nik2;
+            // $updateTeams[1]->email          = $request->email2;
+            // $updateTeams[1]->tanggallahir   = $request->tanggallahir2;
+            // $updateTeams[1]->namapembina    = $request->namapembina;
+            // $updateTeams[1]->asalsekolah    = $request->asalsekolah;
+
+            // $updateTeams[2]->namapeserta    = $request->namapeserta3;
+            // $updateTeams[2]->nik            = $request->nik3;
+            // $updateTeams[2]->email          = $request->email3;
+            // $updateTeams[2]->tanggallahir   = $request->tanggallahir3;
+            // $updateTeams[2]->namapembina    = $request->namapembina;
+            // $updateTeams[2]->asalsekolah    = $request->asalsekolah;
+            foreach ($updateTeams as $updateTeam) {
+                $updateTeam->save();
+            }
+            return redirect(Route('TeamsIndex'));
     }
 
     /**

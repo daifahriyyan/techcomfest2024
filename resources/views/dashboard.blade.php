@@ -15,6 +15,7 @@
             <tr>
               <th scope="col">No</th>
               <th scope="col">Nama Tim</th>
+              <th scope="col">No. Telp</th>
               <th scope="col">Nama File</th>
               <th scope="col">Status</th>
               <th scope="col">Keterangan</th>
@@ -27,7 +28,9 @@
               <td align="left">{{ $loop->iteration }}</td>
               <td>
                 @php 
-                  $namateam = App\Models\Teams::where('userid' , $x['id'])->first('namateam'); 
+                  $namateam = App\Models\Teams::where('userid' , $x['id'])->first('namateam');
+                  $peserta = App\Models\User::where('id', $x['id'])->latest()->first();
+                  $datadiri = App\Models\DataDiri::where('userid' , $x['id'])->latest()->first();
                 @endphp
                 @if(is_null($namateam))
                   kosong
@@ -36,9 +39,13 @@
                 @endif
               </td>
               <td>
-                @php 
-                  $datadiri = App\Models\DataDiri::where('userid' , $x['id'])->latest()->first();
-                @endphp
+                @if(is_null($datadiri))
+                  kosong
+                @else
+                  {{ $peserta ['nohp']; }} 
+                @endif
+              </td>
+              <td>
                 @if(is_null($datadiri))
                   kosong
                 @else
@@ -95,26 +102,30 @@
               <th scope="col"><?php if($role == 'IndependenM'){echo 'Berkas Kerya';}elseif($role == 'IndependenS'){echo 'Link Gdrive';}elseif($role == 'IndependenN'){echo '';} ?></th>
             </tr>
           </thead>
-            @foreach($datadiriadmin as $x)
             @php 
-
               if ($role == 'IndependenM') {
-              $datadiri = App\Models\smulmed::where('idteam' , $x['id'])->latest()->first();
+              $loop = App\Models\smulmed::select()->get();
+              }elseif ($role == 'IndependenS'){
+              $loop = App\Models\ssoftware::select()->get();
+              }elseif ($role == 'IndependenN'){
+              $loop = App\Models\snetwork::select()->get();
+              }
+            @endphp
+            @foreach($loop as $x)
+            @php 
+              if ($role == 'IndependenM') {
+              $datadiri = App\Models\smulmed::where('idteam' , $x['idteam'])->latest()->first();
               }elseif ($role == 'IndependenS'){
               $datadiri = App\Models\ssoftware::where('idteam' , $x['id'])->latest()->first();
               }elseif ($role == 'IndependenN'){
               $datadiri = App\Models\snetwork::where('idteam' , $x['id'])->latest()->first();
               }
-
             @endphp
-            @if (is_null($datadiri))
-                
-            @else
             <tr>
               <td align="left">{{ $loop->iteration }}</td>
               <td>
                 @php 
-                  $namateam = App\Models\Teams::where('userid' , $x['id'])->first('namateam'); 
+                  $namateam = App\Models\Teams::where('id' , $x['idteam'])->first('namateam'); 
                 @endphp
                 @if(is_null($namateam))
                     Kosong
@@ -124,35 +135,30 @@
                 @endif
               </td>
               <td>
-                <?php
-                if(is_null($datadiri)){
-                  echo 'kosong';
-                }else if($role == 'IndependenM'){
-                  echo $datadiri->lorisinil;
-                }else if($role == 'IndependenS'){
-                  echo $datadiri->linkhost;
-                }else if($role == 'IndependenN'){
-                  echo $datadiri->filerar;
-                }
-                ?>
+                @if(is_null($x))
+                    Kosong
+                @elseif($role == 'IndependenM')
+                  {{ $x->lorisinil }}
+                  <a href="{{ route('berkasMulmed' , $x->lorisinil) }}">Download</a>
+                @elseif($role == 'IndependenS')
+                  {{ $x->linkhost }}
+                @elseif($role == 'IndependenN')
+                  {{ $x->filerar }}
+                  <a href="{{ route('berkasNetwork' , $x->filerar) }}">Download</a>
+                @endif
               </td>
               <td>
-                <?php
-
-                    if(is_null($datadiri)){
-                      echo 'kosong';
-                    }else if($role == 'IndependenM'){
-                      echo $datadiri->hasilkaryalomba;
-                    }else if($role == 'IndependenS'){
-                      echo $datadiri->linkgd;
-                    }else if($role == 'IndependenN'){
-                      echo '';
-                    }
-                    
-                ?>
+                @if(is_null($x))
+                    Kosong
+                @elseif($role == 'IndependenM')
+                  {{ $x->lorisinil }}
+                  <a href="{{ route('berkasMulmed' , $x->lorisinil) }}">Download</a>
+                @elseif($role == 'IndependenS')
+                  {{ $x->linkhost }}
+                @elseif($role == 'IndependenN')
+                @endif
               </td>
             </tr>
-            @endif
             
             @endforeach
         </table>

@@ -117,7 +117,7 @@
                         </div> -->
                         <img class="" src="assets/img/user-experience.png" alt="" style="height: auto; width:50%;">
                         <h5 class="mt-4 mb-3">UI / UX Mobile</h5>
-                        <p>Lomba UI/UX mobile adalah salah satu jenis kompetisi yang memiliki User Interface dan User Experience.</p>
+                        <p>Lomba UI/UX mobile Design adalah Sebuah Kompetisi yang bertujuan untuk mengasah Kreativitas dan Keterampilan para Designer UI / UX Mobile.</p>
                         <a data-aos="fade-up" data-aos-delay="200" href="{{url('register')}}"><button class="btn btn-outline-primary rounded-3 " type="button">Daftar Disini</button></a>
                     </div>
                 </div>
@@ -498,7 +498,7 @@
                         </h2>
                         <div id="panelsStayOpen-collapseFifteen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFourteen">
                             <div class="accordion-body">
-                                Karya Design UI / UX Mobile yang diperlombakan akan menjadi hak milik panitia
+                                Karya UI/UX Mobile Design yang akan menjadi hak milik panitia yaitu yang diperlombakan peserta finalis.
                             </div>
                         </div>
                     </div>
@@ -564,7 +564,8 @@
                         <div>
                             <h3><span style="color: white">Contact Person</span></h3>
                             <p>Wahyu => <a href="wa.me/081225355583">081225355583</a></p>
-                            <p>Violeta => <a href="wa.me/083829136518">083829136518</a></p>
+                            <p>Neli => <a href="wa.me/089652792095">089652792095</a></p>
+                            <p>Arka => <a href="wa.me/0895811048700">0895811048700</a></p>
                         </div>
                     </div>
                 </div>

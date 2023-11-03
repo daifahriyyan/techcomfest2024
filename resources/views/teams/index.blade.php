@@ -6,6 +6,8 @@
     </div>
     <div class="section-body">
         <h2 class="section-title">Data Tim</h2>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$teams->id}}">Edit</button>
+        <a href="{{ Route('TeamsTambah') }}"><button class="btn btn-primary">Tambah Team</button></a>
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -55,4 +57,61 @@
         </div>
     </div>
 </section>
+{{-- Edit Modal --}}
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal{{$teams->id}}">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Edit Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form method="GET" action="{{ route('TeamsUpdate', $teams->id) }}" enctype="multipart/form-data" >
+          @csrf
+            <?php $i = 0; ?>
+        <br>
+        <div class="form-group">
+            <label>Nama Pembina</label>
+        <input type="text" name="namapembina" value="{{$peserta[0]->namapembina}}" class="form-control" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Asal Sekolah</label>
+        <input type="text" name="asalsekolah" value="{{$peserta[0]->asalsekolah}}" class="form-control" required>
+        </div>
+@foreach ($peserta as $x)
+            <?php $i++ ?>
+        <br>
+        <label>Peserta {{ $i }}</label>
+        <div class="form-group">
+            <label>Nama Peserta</label>
+        <input type="text" name="namapeserta{{$i}}" value="{{$x->namapeserta}}" class="form-control" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>NIS/NISN</label>
+        <input type="number" name="nik{{$i}}" value="{{$x->nik}}" class="form-control" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>E-mail</label>
+        <input type="email" name="email{{$i}}" value="{{$x->email}}" class="form-control" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Tanggal Lahir</label>
+        <input type="date" name="tanggallahir{{$i}}" value="{{$x->tanggallahir}}" class="form-control" required>
+        </div>
+@endforeach
+    </div>
+    <div class="modal-footer bg-whitesmoke br">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <input type="submit" class="btn btn-primary" value="Simpan"></input>
+    </div>
+    </form>
+</div>
+</div>
+</div>
 @endsection

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/modules/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
 
     <link rel="icon" href="assets/img/logo.png">
     <!-- CSS Libraries -->
@@ -67,6 +68,11 @@
     <!-- Template JS File -->
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script>
+        function konfirmasi() {
+            confirm('Apakah Sudah Yakin?');
+        }
+    </script>
 </body>
 
 </html>

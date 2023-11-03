@@ -20,6 +20,8 @@ class SubsmissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  Looping Berkas Team Dashboard
     public function indexmulmed()
     {
         $teams = Teams::where('userid' , Auth::user()->id)->first();
@@ -163,5 +165,17 @@ class SubsmissionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function berkasMulmed($id)
+    {
+        $pathToFile = 'SubsmissionMultiMedia/' . $id;
+        return response()->download($pathToFile);
+    }
+    
+    public function berkasNetwork($id)
+    {
+        $pathToFile = 'SubsmissionNetwork/' . $id;
+        return response()->download($pathToFile);
     }
 }

@@ -21,7 +21,6 @@
                     <tbody>
                         @if(!$datadirisendiri->isEmpty())
                         @foreach($datadirisendiri as $x)
-                        <tr>
                             <td>
                                 {{ Auth::user()->name }}
                             </td>
@@ -35,6 +34,7 @@
                                 @elseif($x->status == 'Denied')
                                 <div class="badge badge-danger">Denied</div> | <a href="{{ Route('DataDiriCreate') }}">Ulangi Data Diri</a>
                                 @endif
+                            {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ $x->id }}">Edit</button> --}}
                             </td>
                             @endforeach
                             @else
@@ -50,4 +50,31 @@
         </div>
     </div>
 </section>
+{{-- @foreach ($datadirisendiri as $x)
+Edit Modal
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal{{ $x->id }}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit File</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label>Status</label>
+                <form method="post" action="" enctype="multipart/form-data" class="dropzone" id="mydropzone">
+                    @csrf
+                    <br>
+                    <div class="fallback">
+                        <input name="file" type="file" multiple required/>
+                    </div><br>
+            </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+  </div>
+@endforeach--}}
+
 @endsection

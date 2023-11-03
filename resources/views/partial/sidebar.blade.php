@@ -78,6 +78,19 @@
             <a href="/assets/file/2024 GENERAL RULEBOOK TECHCOMFEST.pdf" class="btn btn-primary btn-lg btn-block btn-icon-split" download>
                 <i class="fas fa-rocket"></i>Panduan Umum
             </a>
+            @if(Auth::user()->kategori == 'Software')
+            <a href="/assets/file/2024 RULEBOOK WDC TECHCOMFEST.pdf" class="btn btn-primary btn-lg btn-block btn-icon-split" download>
+                <i class="bi bi-window-stack"></i>Panduan WDC
+            </a>
+            @elseif(Auth::user()->kategori == 'Network')
+            <a href="/assets/file/2024 RULEBOOK CTF TECHCOMFEST.pdf" class="btn btn-primary btn-lg btn-block btn-icon-split" download>
+                <i class="bi bi-flag"></i>Panduan CTF
+            </a>
+            @elseif(Auth::user()->kategori == 'Multimedia')
+            <a href="/assets/file/2024 RULEBOOK UIUX TECHCOMFEST.pdf" class="btn btn-primary btn-lg btn-block btn-icon-split" download>
+                <i class="bi bi-phone"></i>Panduan UIUX Mobile
+            </a>
+            @endif
         </div>
     </aside>
 </div>
